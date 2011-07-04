@@ -1,6 +1,7 @@
 <!-- web/footer.vm -->
 
 #parse("web/ad/footerHalfbanner.vm")
+## ハーフバナーを出す？出さない？
 
 <div class="footer_widebg">
 <div id="footer">
