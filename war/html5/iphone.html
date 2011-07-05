@@ -1,0 +1,142 @@
+<!DOCUTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>top - HTML5 -</title>
+
+	<!--
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=320; height=400; initial-scale=1.0; user-scalable=0;">
+	-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<style>
+		article, aside, figure, footer, header, hgroup, menu, nav,
+		section { display:block; }
+	</style>
+</head>
+<!-- /sns/head.vm -->
+<body>
+	<form>
+		x1:<input type="text" name="x1" value="" />
+		y1:<input type="text" name="y1" value="" />
+		x2:<input type="text" name="x2" value="" />
+		y2:<input type="text" name="y2" value="" /> 
+	</form>
+
+
+
+<h2>Canvasのテスト for iPhone</h2>
+<br /><a href="/">iPhone/Androidの縦横でスタイルを変える</a><br />
+
+	<canvas id="a_canvas" width="300" height="300"></canvas>
+
+	<script type="text/javascript" src="imgareaselect-0.9.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		var canvas = document.getElementById("a_canvas");
+		var ctx = canvas.getContext("2d");
+		var touchCount = 0;
+		var x1 = 0;
+		var y1 = 0;
+		var x2 = 0;
+		var y2 = 0;
+
+//		ctx.fillText("x1座標：" + x1, 5, 12);
+//		ctx.fillText("y1座標：" + y1, 5, 24)
+//		ctx.fillText("x2座標：" + x2, 5, 36);
+//		ctx.fillText("y2座標：" + y2, 5, 48)
+
+		canvas.ontouchstart = mDown;
+		function mDown (eve) {
+
+			touchCount++;
+			if (touchCount == 1) {
+
+				if (eve.touches.length > 0) {
+					//for (var i=0; i < eve.touches.lengh; i++) {
+					//	var t = eve.touches[i];
+					var t = eve.touches[0];
+					x1 = t.clientX;
+					y1 = t.clientY;
+				}
+
+				ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // 塗りつぶし色
+				ctx.fillRect(x1, y1, 2, 2);
+				$('input[name=x1]').val(x1);
+				$('input[name=y1]').val(y1);
+				$('input[name=x2]').val(x2);
+				$('input[name=y2]').val(y2);
+			} else {
+				ctx.clearRect(0, 0, 500, 500);
+				x1 = 0;
+				y1 = 0;
+				x2 = 0;
+				y2 = 0;
+			}
+		}
+
+		canvas.ontouchmove = mMove;
+		function mMove (eve) {
+			if (touchCount == 1) {
+				ctx.clearRect(0, 0, 500, 500);
+				//x2 = eve.x-x1;
+				//y2 = eve.y-y1;
+
+				if (eve.touches.length > 0) {
+					//for (var i=0; i < eve.touches.lengh; i++) {
+					//	var t = eve.touches[i];
+					var t = eve.touches[0];
+					//x2 = t.clientX - x1;
+					//y2 = t.clientY - y1;
+					x2 = t.clientX;
+					y2 = t.clientY;
+				}
+				//ctx.fillStyle = "rgb(0, 0, 0)"; // 塗りつぶし色
+				ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // 塗りつぶし色
+				ctx.fillRect(x1, y1, x2, y2);
+				$('input[name=x1]').val(x1);
+				$('input[name=y1]').val(y1);
+				$('input[name=x2]').val(x2);
+				$('input[name=y2]').val(y2);
+			}
+		}
+
+		canvas.ontouchend = mUp;
+		function mUp (eve) {
+			touchCount=0;
+		}
+	</script>
+
+
+
+
+<br />
+<a href="index.html">PC版のマウスDown、Upをキャッチ版</a>
+<br />
+<a href="iphone.html">iPhone版のtouchをキャッチ版</a>
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /sns/footer.vm -->
+<div id="footer">
+	<h5>Copyright(c)2000-2011 NIPPON TELENET Co,Ltd All Rights Reserved.</h5>
+</div>
+
+</body>
+</html>
