@@ -1,3 +1,5 @@
+eclipseで編集
+
 <!-- web/footer.vm -->
 
 #parse("web/ad/footerHalfbanner.vm")
