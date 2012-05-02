@@ -4,50 +4,52 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <!DOCTYPE html>
 <html>
+<!DOCUTYPE html>
+<html lang="ja">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="content-script-type" content="text/javascript" />
-	<meta http-equiv="content-style-type" content="text/css" />
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<title>iPhoneの縦・横でスタイルを切り替える</title>
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
-	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript" src="js/tilt.js"></script>
+	<title> Slownetはただいまメンテナンス中です</title>
+	<link rel="stylesheet" type="text/css" href="/css/import.css">
+	<link rel="stylesheet" type="text/css" href="/css/basic.css">
+	<link rel="stylesheet" type="text/css" href="/css/font_def.css">
+	<link rel="stylesheet" type="text/css" href="/css/notice.css">
 </head>
+
+
 <body>
 
-<div id="container">
-	<div id="conts">
-		<h1 class="title">iPhoneの縦・横でスタイルを切り替える</h1>
+<div id="pub_block">
+	<a name="pagetop"></a>
 
-		<h2 class="naviTitle">横並びのボックスサイズを変更する</h2>
-		<div class="boxSet clearfix">
-			<div class="box left">
-				<!--a href="/sns/bc/imagestr/index.html" target="_blank">しゃもじくん</a-->
-			<ul>
-				<li><a href="sample/test.html">sample</a></li>
-				<li><a href="ui/dialog/index.html">dialog</a></li>
-				<li><a href="html5/index.html">html5/index.html</a></li>
-				<li><a href="html5/iphone.html">html5/iphone.html</a></li>
-			</ul>
-			</div>
-		
-			<div class="box right">
-				<a href="ip-ad/index.html">iPhone/Androidで背景色が変わる</a>
-			</div>
-		</div>
+<!-- ヘッダーここから -->
+<div id="slownet_logo_normal">
+	<h1 ><a href="/" title="スローネットトップページ">スローネット</a></h1>
+</div>
+<!-- ヘッダーここまで -->
 
-		<h2 class="naviTitle">縦のときだけ表示されるテキスト</h2>
-		<p class="image">
-			サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-			<br />
-			<br />
-			<a href="ui/dialog/index.html">dialog</a>
-			</p>
-	</div>
-</div>	
+	<div id="contents" class="clearfix">
+		<div id="entry_block">
+					<h2 class="ch01">Slownetはただいまメンテナンス中です</h2>
+					<div class="ferror">
+					
+
+						<div class="fsxl mam">
+
+
+						<p>Slownetはメンテナンス作業中です。<br />2012年5月7日 13:00にオープンする予定です。<br />今しばらくお待ち下さい。</p>
+
+
+						</div><!--end of fsxl-->
+					</div><!--end of ferror-->
+
+
+				<div class="btm16"><input type="submit" name="back" value="←前のページに戻る"/></div>
+
+			</div><!--end of entry_block-->
+		</div><!--end of contents-->
+
+</div><!-- //pub_block-->
 
 </body>
 </html>
