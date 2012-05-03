@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+
+    <servlet>
+        <servlet-name>mainteinServlet</servlet-name>
+        <servlet-class>com.tdtsh.gittest.process.maintenanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mainteinServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+<!--
 	<context-param>
         <param-name>slim3.rootPackage</param-name>
         <param-value>com.tdtsh.gittest</param-value>
@@ -52,34 +63,10 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     
-    <!--
-    <servlet>
-        <servlet-name>GWTServiceServlet</servlet-name>
-        <servlet-class>org.slim3.gwt.server.rpc.GWTServiceServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    -->
-
-    <servlet>
-        <servlet-name>KtrWjrServiceServlet</servlet-name>
-        <servlet-class>bufferings.ktr.wjr.server.service.KtrWjrServiceServlet</servlet-class>
-    </servlet>
 
     <servlet-mapping>
         <servlet-name>GlobalTransactionServlet</servlet-name>
         <url-pattern>/slim3/gtx</url-pattern>
-    </servlet-mapping>
-    
-    <!--
-    <servlet-mapping>
-        <servlet-name>GWTServiceServlet</servlet-name>
-        <url-pattern>*.s3gwt</url-pattern>
-    </servlet-mapping>
-    -->
-
-    <servlet-mapping>
-        <servlet-name>KtrWjrServiceServlet</servlet-name>
-        <url-pattern>/ktrwjr/ktrwjr/ktrwjr.s3gwt</url-pattern>
     </servlet-mapping>
     
     <security-constraint>
@@ -105,4 +92,6 @@
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
+  -->
+  
 </web-app>
