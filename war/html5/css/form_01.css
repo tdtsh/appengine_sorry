@@ -1,0 +1,82 @@
+/*#######################################*/
+/*####syamoji form_01.css######*/
+/*#######################################*/
+
+
+/*--form02 toko_boxÅ@Ç±Ç±Ç©ÇÁ----*/
+
+#wrapper #contents #contentsMain{
+	background-color:#e8e8e8;
+	padding:10px 0 ;
+	margin-left:40px; 
+	width:670px;
+	text-align:center;
+	-moz-border-radius:5px; 
+	border-radius:5px;
+}
+
+#wrapper #contents #contentsMain dl.toko_box {
+	width:640px;
+}
+
+#wrapper #contents #contentsMain .toko_box dt{
+	float:left;  
+	width:13em;  
+	padding:5px 0 5px 0px;  
+	clear:left;
+	font-weight:bold; 
+}
+
+#wrapper #contents #contentsMain .toko_box dd{ 
+	margin-left:13em;
+	padding:0 0 0 5px;  
+	text-align:left;
+}
+
+#wrapper #contents #contentsMain dl.toko_box_form_01 {
+	width:100%;
+}
+
+#wrapper #contents #contentsMain .toko_box_form_01 dt{
+	float:left; 
+	clear:left;
+	font-weight:bold; 
+}
+
+#wrapper #contents #contentsMain .toko_box_form_01 dd{  
+/*	text-align:left;*/
+	float:left; 
+}
+
+#wrapper #contents #contentsMain dl.toko_box_form_01 table{
+	margin:10px auto 10px auto;
+	width:90%;
+}
+
+#wrapper #contents .select_photo_box{
+	width:100%;
+	margin:20px auto 20px auto;
+	text-align:center;
+}
+
+#wrapper #contents .select_photo_box table{
+	width:100%;
+	border:none;
+}
+
+#wrapper #contents .select_photo_box table td.back{
+	text-align:left;
+}
+
+#wrapper #contents .select_photo_box table td.next{
+	text-align:right;
+}
+
+#wrapper #contents #contentsMain .subtext{
+	color: red;
+	text-align:left;
+	font-size:14px;
+	font-weight:normal;
+}
+
+/*--form02 toko_boxÅ@Ç±Ç±Ç‹Ç≈----*/

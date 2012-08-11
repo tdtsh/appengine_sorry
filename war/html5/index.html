@@ -1,0 +1,177 @@
+<!DOCUTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>top - HTML5 -</title>
+
+	<!--
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=320; height=400; initial-scale=1.0; user-scalable=0;">
+	-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<style>
+		article, aside, figure, footer, header, hgroup, menu, nav,
+		section { display:block; }
+	</style>
+</head>
+<!-- /sns/head.vm -->
+<body>
+<form>
+	x1:<input type="text" name="x1" value="" />
+	y1:<input type="text" name="y1" value="" />
+	x2:<input type="text" name="x2" value="" />
+	y2:<input type="text" name="y2" value="" /> 
+</form>
+
+
+<link rel="stylesheet" type="text/css" href="css/form_all.css">
+<link rel="stylesheet" type="text/css" href="css/form_02.css">
+
+
+<h2>Canvasのテスト for PC</h2>
+
+<br /><a href="/">iPhone/Androidの縦横でスタイルを変える</a><br />
+
+<a name="top" id="top"></a>
+<div id="wrapper">
+	<div id="header">
+		<h1><img src="images/title.jpg" alt="Slownet写真文字入れツール" border="0" /></h1>
+	</div>
+	<div id="contents">
+		<div class="navi">
+			<img src="images/pan_03.gif" alt="3 文字の位置と大きさを選択" border="0" />
+			<p class="navi_text">文字が入る位置を大きさをマウスで範囲指定し、「次へ」ボタンを押してください。<br /><span class="subtext">※点線枠が縦長なら縦書きに、点線枠が横長なら横書きになります。</span></p>
+		</div>
+
+	
+	<dl>
+		<dt></dt>
+			<dd>
+				<canvas id="a_canvas" width="600" height="400" border="1"></canvas>
+				<img id="photo" src="images/sample.jpg" />
+				<input type="hidden" name="imageId" value="$!{f.imageId}" />
+			</dd>
+	</dl>
+	</div><!--end of contentsMain-->
+
+
+
+
+	<a name="01" id="01"></a>
+	<div class="select_photo_box">
+		<table>
+			<tr>
+				<td class="back"><input type="submit" value="戻る" name="form2to1" class="submit" /></td>
+				<td class="next"><input type="submit" value="次へ" name="form3" class="submit" /></td>
+			</tr>
+		</table>
+	</div><!--end ofselect_photo_box-->
+
+
+	<script type="text/javascript" src="/asis/imgareaselect-0.9.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		var canvas = document.getElementById("a_canvas");
+		var ctx = canvas.getContext("2d");
+		var touchCount = 0;
+		var x1 = 0;
+		var y1 = 0;
+		var x2 = 0;
+		var y2 = 0;
+
+//		ctx.fillText("x1座標：" + x1, 5, 12);
+//		ctx.fillText("y1座標：" + y1, 5, 24)
+//		ctx.fillText("x2座標：" + x2, 5, 36);
+//		ctx.fillText("y2座標：" + y2, 5, 48)
+
+		canvas.onmousedown = mDown;
+		function mDown (eve) {
+			touchCount++;
+			if (touchCount == 1) {
+				x1 = eve.offsetX;
+				y1 = eve.offsetY;
+				//ctx.fillStyle = "rgb(0, 0, 0)"; // 塗りつぶし色
+				ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // 塗りつぶし色
+				ctx.fillRect(x1, y1, 2, 2);
+//				ctx.fillStyle = "rgb(0, 0, 0)"; // 塗りつぶし色
+//				ctx.fillText("x1座標：" + x1, 5, 12);
+//				ctx.fillText("y1座標：" + y1, 5, 24)
+//				ctx.fillText("x2座標：" + x2, 5, 36);
+//				ctx.fillText("y2座標：" + y2, 5, 48)
+				$('input[name=x1]').val(x1);
+				$('input[name=y1]').val(y1);
+				$('input[name=x2]').val(x2);
+				$('input[name=y2]').val(y2);
+			} else {
+				ctx.clearRect(0, 0, 640, 480);
+				x1 = 0;
+				y1 = 0;
+				x2 = 0;
+				y2 = 0;
+			}
+		}
+
+		canvas.onmousemove = mMove;
+		function mMove (eve) {
+			if (touchCount == 1) {
+				ctx.clearRect(0, 0, 640, 480);
+				x2 = eve.offsetX-x1;
+				y2 = eve.offsetY-y1;
+				//ctx.fillStyle = "rgb(0, 0, 0)"; // 塗りつぶし色
+				ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // 塗りつぶし色
+				ctx.fillRect(x1, y1, x2, y2);
+//				ctx.fillStyle = "rgb(0, 0, 0)"; // 塗りつぶし色
+//				ctx.fillText("x1座標：" + x1, 5, 12);
+//				ctx.fillText("y1座標：" + y1, 5, 24)
+//				ctx.fillText("x2座標：" + x2, 5, 36);
+//				ctx.fillText("y2座標：" + y2, 5, 48)
+				$('input[name=x1]').val(x1);
+				$('input[name=y1]').val(y1);
+				$('input[name=x2]').val(x2);
+				$('input[name=y2]').val(y2);
+			}
+		}
+
+		canvas.onmouseup = mUp;
+		function mUp (eve) {
+			touchCount=0;
+            $('input[name=x1]').val(x1);
+            $('input[name=y1]').val(y1);
+            $('input[name=x2]').val(x2);
+            $('input[name=y2]').val(y2);
+		}
+	</script>
+
+
+
+	</div><!--end of contents-->
+
+<br />
+<a href="index.html">PC版のマウスDown、Upをキャッチ版</a>
+<br />
+<a href="iphone.html">iPhone版のtouchをキャッチ版</a>
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /sns/footer.vm -->
+<div id="footer">
+	<h5>Copyright(c)2000-2011 NIPPON TELENET Co,Ltd All Rights Reserved.</h5>
+</div>
+
+</body>
+</html>

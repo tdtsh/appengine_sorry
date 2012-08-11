@@ -1,0 +1,30 @@
+# osx noise
+.DS_Store
+profile
+
+# xcode noise
+build/*
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata
+
+# svn & cvs
+.svn
+CVS
+
+#old Slownet
+custom/不要*
+
+#build files
+*.class
+war/WEB-INF/classes/
+war/WEB-INF/classes/jp/sociallinx/model/
+war/article/
+war/css/
+war/WEB-INF/classes/jp/sociallinx/model/SnsNote.class
+
