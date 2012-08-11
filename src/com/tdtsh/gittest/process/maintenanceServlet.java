@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author tadatoshi_hanazaki
  *
  */
+@SuppressWarnings("serial")
 public class maintenanceServlet extends HttpServlet {
 
     @Override
@@ -27,7 +28,7 @@ public class maintenanceServlet extends HttpServlet {
 		writer.println("<head>");
 		writer.println("	<meta charset=\"UTF-8\">");
 		writer.println("	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" />");
-		writer.println("	<title> Slownetはただいまメンテナンス中です</title>");
+		writer.println("	<title> ただいまメンテナンス中です</title>");
 		writer.println("	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/import.css\">");
 		writer.println("	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/basic.css\">");
 		writer.println("	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/font_def.css\">");
@@ -41,21 +42,21 @@ public class maintenanceServlet extends HttpServlet {
 		writer.println("	<a name=\"pagetop\"></a>");
 		writer.println("");
 		writer.println("<!-- ヘッダーここから -->");
-		writer.println("<div id=\"slownet_logo_normal\">");
-		writer.println("	<h1 ><a href=\"/\" title=\"スローネットトップページ\">スローネット</a></h1>");
+		writer.println("<div id=\"logo_normal\">");
+		writer.println("	<h1 ><a href=\"/\" title=\"トップページ\">Sorry！</a></h1>");
 		writer.println("</div>");
 		writer.println("<!-- ヘッダーここまで -->");
 		writer.println("");
 		writer.println("	<div id=\"contents\" class=\"clearfix\">");
 		writer.println("		<div id=\"entry_block\">");
-		writer.println("					<h2 class=\"ch01\">Slownetはただいまメンテナンス中です</h2>");
+		writer.println("					<h2 class=\"ch01\">ただいまメンテナンス中です</h2>");
 		writer.println("					<div class=\"ferror\">");
 		writer.println("					");
 		writer.println("");
 		writer.println("						<div class=\"fsxl mam\">");
 		writer.println("");
 		writer.println("");
-		writer.println("						<p>Slownetはメンテナンス作業中です。<br />2012年5月7日 13:00にオープンする予定です。<br />今しばらくお待ち下さい。</p>");
+		writer.println("						<p>ただいまメンテナンス作業中です。<br />201X年X月X日 XX:00にオープンする予定です。<br />今しばらくお待ち下さい。</p>");
 		writer.println("");
 		writer.println("");
 		writer.println("						</div><!--end of fsxl-->");
