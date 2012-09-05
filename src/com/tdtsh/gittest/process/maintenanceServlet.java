@@ -14,10 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author tadatoshi_hanazaki
  *
  */
-<<<<<<< HEAD
 @SuppressWarnings("serial")
-=======
->>>>>>> dc9fd1f0729c60f38d56c05a22b792290e07f3d0
 public class maintenanceServlet extends HttpServlet {
 
     @Override
